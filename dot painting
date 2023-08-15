@@ -1,0 +1,37 @@
+import turtle as t
+import random2 as ra
+tom=t.Turtle()
+t.colormode(255)
+tom.speed(0)
+tom.ht()
+tom.up()
+def color():
+    r=ra.randint(0,255)
+    g=ra.randint(0,255)
+    b=ra.randint(0,255)
+    return (r,g,b)
+def painting():
+    for i in range(10):
+        for j in range(10):
+            tom.color(color())
+            tom.dot(20)
+            tom.fd(50)
+            if tom.xcor()==500:
+                tom.bk(50)
+            if tom.xcor()==-50:
+                tom.bk(50)
+        x=tom.xcor()
+        if x!=0:
+            tom.left(90)
+            tom.fd(50)
+            tom.left(90)
+        else:
+            tom.right(90)
+            tom.fd(50)
+            tom.right(90)
+
+       
+        
+painting()
+screen=t.Screen()
+screen.exitonclick()
